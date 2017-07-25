@@ -1,0 +1,29 @@
+.router-link-active {
+  background-color: #fffff !important;
+  color: #ff0000 !important;
+  border-radius: 5px !important;
+}
+
+.move-enter-active,
+.move-leave-active {
+  transition: opacity .5s;
+}
+
+.move-enter,
+.move-leave-active {
+  opacity: 0.1;
+}
+
+form {
+  max-width: 330px;
+  padding: 15px;
+}
+
+button {
+  max-width: 100px;
+  padding: 5px;
+}
+
+input {
+  margin: 3px;
+}

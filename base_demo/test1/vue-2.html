@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Vuejs简单示例</title>
+        <!--引入开发版本vue.js，在开发版本中会有很多友好的提示-->
+        <script src='./vue.js'></script>
+        <!--下面为cdn引用方式，实验中我们使用下载好的vue.js
+        <script src='https://unpkg.com/vue@2.1.10/dist/vue.js'></script>-->
+
+    </head>
+    <body>
+        <!--定义一个id为demo的div-->
+        <div id="demo">
+          <!--此处的msg为在vuejs中定义的变量，放在两个花括号中-->
+          <h1>Hello {{msg}}</h1>
+          <input type="text" v-model="msg">
+        </div>
+        <script>
+            new Vue({
+                el:'#demo',
+                data:{
+                    msg:'实验楼'
+                }
+            })
+    </script>
+    </body>
+</html>

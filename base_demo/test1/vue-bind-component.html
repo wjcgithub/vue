@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue bind class</title>
+  <script src="./vue.js" charset="utf-8"></script>
+</head>
+<body>
+  <div id="demo">
+    <my-component v-bind:msg=msg></my-component>
+  </div>
+</body>
+
+  <script type="text/javascript">
+    Vue.component('my-component', {
+      template: '<div>一个vuejs组件例子</div>',
+      props: ['msg'],
+      data: []
+    });
+    new Vue({
+      el:'#demo',
+      data:{
+        msg:'vue.js组件'
+      }
+    });
+  </script>
+</html>

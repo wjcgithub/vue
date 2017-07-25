@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue 全局配置</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="demo">
+    <button v-on:click="doThis">{{msg}}</button>
+  </div>
+  <script type="text/javascript">
+    //取消 Vue 所有的日志与警告
+    Vue.config.silent = true;
+    // 务必在加载 Vue 之后，立即同步设置以下内容,  配置是否允许 vue-devtools 检查代码
+    Vue.config.devtools = true;
+    Vue.config.errorHandler = function (err, vm, info) {
+      // handle error
+      // `info` 是 Vue 特定的错误信息，比如错误所在的生命周期钩子
+      // 只在 2.2.0+ 可用
+    }
+
+    new Vue({
+      el:'#demo',
+      data:{
+        msg:"单击按钮",
+        name:"vuejs"
+      },
+      methods:{
+        doThis:function(e){
+          console.log(this);
+          console.log(e.target);
+          console.log('hello'+this.name+'!');
+          console.log('hello'+this.msg+'!');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

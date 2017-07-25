@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vuejs简单示例</title>
+  <script src='./vue.js'></script>
+</head>
+<body>
+  <div id="demo">
+    <h1>Hello {{msg}}</h1>
+    <span v-text='msg'>hello shiyanlou</span>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el:'#demo',
+      data:{
+        msg:'哈哈哈'
+      }
+    });
+  </script>
+</body>
+</html>

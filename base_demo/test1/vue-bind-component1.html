@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue bind class</title>
+  <script src="./vue.js" charset="utf-8"></script>
+</head>
+<body>
+  <div id="demo">
+    <h1>{{msg}}</h1>
+    <my-component v-bind:items='items'></my-component>
+  </div>
+
+  <script type="text/x-template" id="my_component">
+    <form @submit.prevent="additem(newitem)">
+      <div v-for="item in items">
+        <p>{{item.text}}</p>
+      </div>
+
+      <div>
+        <input type="text" v-model="newitem.text">
+      </div>
+      <div>
+        <button>添加</button>
+      </div>
+    </form>
+  </script>
+</body>
+
+  <script type="text/javascript">
+    Vue.component('my-component', {
+      template: '#my_component',
+      props: ['msg','items'],
+      data(){
+        return {
+          newitem:{text:''}
+        }
+      },
+      methods:{
+        additem(newitem){
+          this.items.push(newitem);
+          this.newitem={text:''}
+        }
+      }
+    });
+    new Vue({
+        el:'#demo',
+        data:{
+          msg:'vue.js组件',
+          items:[
+            {text:'hello 实验楼'}
+          ]
+        }
+    });
+  </script>
+</html>

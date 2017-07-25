@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>vue v-for</title>
+  <script src="./vue.js"></script>
+</head>
+<body>
+  <div id="demo">
+    <div v-for="(item,index) in items"> {{ index }}{{ item.text }} </div>
+    <div v-for="item in items"> {{ item.text }} </div>
+    <div v-for="item in items"> {{ item.text }} </div>
+    <div v-for="item in items"> {{ item.text }}{{ item.name }} </div>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el:'#demo',
+      data:{
+        items:[
+          {text:'hello',name:'A'},
+          {text:'hello',name:'B'},
+          {text:'hello',name:'C'},
+          {text:'hello',name:'D'}
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

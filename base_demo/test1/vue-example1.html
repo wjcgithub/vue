@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Vuejs简单示例</title>
+        <script src='./vue.js'></script>
+    </head>
+    <body>
+        <div id="demo">
+
+        <h1>{{msg}}</h1>
+        <form  @submit.prevent="additem(newitem)" >
+            <div v-for="(item,index) in items">
+                <h5>{{ item.text }}</h5><button v-on:click="deleteitem($event,index)">删除</button>
+            </div>
+            <div>
+                <input type="text" v-model="newitem.text">
+            </div>
+            <div>
+                <button>添加</button>
+            </div>
+        </form>
+        </div>
+        <script>
+            <!--实例化vuejs-->
+            new Vue({
+                el:'#demo',
+                data:{
+                    msg:'实验楼第一个vuejs示例',
+                    items:[
+                        {text:'hello 实验楼'}
+                    ],
+                    newitem:{text:''}
+                },
+                methods:{
+                    additem(newitem){
+                        this.items.push(newitem);
+                        this.newitem={test:''}
+                    },
+                    deleteitem(_this,index){
+                      _this.target.remove();
+                      this.items.splice(index,1)
+                    }
+                }
+            })
+    </script>
+    </body>
+</html>
